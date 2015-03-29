@@ -1,8 +1,0 @@
-# upload page size in bytes
-pagesize=1024
-# use uart
-communicationMode="i2c"
-#cycles per second
-cyclespersecond=16000000
-
-

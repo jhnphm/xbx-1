@@ -48,7 +48,7 @@
 
 extern uint32_t pui32Stack[1024];
 
-void XBD_switchToBootLoader(void) ;
+void XBD_switchToBootLoader(void);
 
 void XBD_init() {
   /* inititalisation code, called once */
@@ -135,13 +135,13 @@ inline void XBD_sendExecutionCompleteSignal() {
 }
 
 
-void XBD_debugOut(char *message) {
+void XBD_debugOut(const char *message) {
 #ifdef DEBUG
   /* if you have some kind of debug interface, write message to it */
   // OSRAM96x16x1StringDraw(message, 0, 0);
 
 
-   char *m=message;
+   const char *m=message;
 	while(*m){
         if(*m == '\n'){
             UARTCharPut(UART0_BASE, '\r');
@@ -247,7 +247,7 @@ uint8_t *p = NULL;
 uint8_t inv_sc=0;
 
 
- __attribute__ ( ( noinline ) )
+__attribute__ ( ( noinline ) )
 void getSP(volatile uint8_t **var_SP)
 {
   volatile uint8_t beacon;
